@@ -103,12 +103,6 @@ export const BurgerControllers = ({
         isClearAllDisabled={isClearAllDisabled}
         successFn={clearAll}
       />
-      {/* <AlertComponent
-        isOpen={getDisplayOrderAlert}
-        alertText={orderErrorMessage ? orderErrorMessage : message.orderConfirm}
-        timing={defaultAlertTiming}
-        isSuccess={isConfirmOrderSuccess}
-      /> */}
     </div>
   );
 };
