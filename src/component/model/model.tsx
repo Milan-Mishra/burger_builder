@@ -11,7 +11,7 @@ import {
 } from "../../constants/constants";
 
 // reference https://stackoverflow.com/a/7224605/15350391
-const capitalize = (s: string) => s && s[0].toUpperCase() + s.slice(1);
+const capitalize = (s: string) => s && s[0] + s.slice(1);
 
 export const ModelComponent = ({
   modelStatus,
