@@ -1,16 +1,16 @@
 export enum BurgerIngredientTypeEnum {
-  BreadBottom = 1,
-  BreadTop = 2,
-  Meat = 3,
-  Cheese = 4,
-  Salad = 5,
-  Bacon = 6,
+  BreadBottomFoodName = 1,
+  BreadTopFoodName = 2,
+  MeatFoodName = 3,
+  CheeseFoodName = 4,
+  SaladFoodName = 5,
+  BaconFoodName = 6,
 }
 
 export type IBurgerIngredientType =
-  | BurgerIngredientTypeEnum.Bacon
-  | BurgerIngredientTypeEnum.BreadBottom
-  | BurgerIngredientTypeEnum.BreadTop
-  | BurgerIngredientTypeEnum.Cheese
-  | BurgerIngredientTypeEnum.Meat
-  | BurgerIngredientTypeEnum.Salad;
+  | BurgerIngredientTypeEnum.BaconFoodName
+  | BurgerIngredientTypeEnum.BreadBottomFoodName
+  | BurgerIngredientTypeEnum.BreadTopFoodName
+  | BurgerIngredientTypeEnum.CheeseFoodName
+  | BurgerIngredientTypeEnum.MeatFoodName
+  | BurgerIngredientTypeEnum.SaladFoodName;

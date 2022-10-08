@@ -11,18 +11,18 @@ import "./burger_controllers.css";
 
 export const BurgerControllers = ({
   buttonClickEvent,
-  disabledButtonArrayList,
+  disabledButtonArrayListName: disabledButtonArrayList,
   price,
-  clearAll,
+  clearAllFunction: clearAll,
   isClearAllDisabled,
-  burgerOption,
+  burgerOptionTypes: burgerOption,
 }: {
   buttonClickEvent: Function;
-  disabledButtonArrayList: IBurgerIngredientType[];
+  disabledButtonArrayListName: IBurgerIngredientType[];
   price: number;
-  clearAll: Function;
+  clearAllFunction: Function;
   isClearAllDisabled: boolean;
-  burgerOption: IBurgerOptionType;
+  burgerOptionTypes: IBurgerOptionType;
 }) => {
   // state to clear all button
   const [getDisplayAlert, setDisplaySummary] = useState(false);
@@ -103,12 +103,6 @@ export const BurgerControllers = ({
         isClearAllDisabled={isClearAllDisabled}
         successFn={clearAll}
       />
-      {/* <AlertComponent
-        isOpen={getDisplayOrderAlert}
-        alertText={orderErrorMessage ? orderErrorMessage : message.orderConfirm}
-        timing={defaultAlertTiming}
-        isSuccess={isConfirmOrderSuccess}
-      /> */}
     </div>
   );
 };
