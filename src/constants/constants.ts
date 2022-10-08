@@ -9,10 +9,10 @@ export const ingredientArray = [
 ];
 
 export const defaultIngredientsPrice = {
-  Cheese: 1,
-  Salad: 0.5,
-  Bacon: 0.75,
-  Meat: 2,
+  Cheese: 1 * 10,
+  Salad: 0.5 * 10,
+  Bacon: 0.75 * 10,
+  Meat: 2 * 10,
 };
 
 export const defaultAlertText: string = "This is a success message";
