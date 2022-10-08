@@ -7,6 +7,7 @@ import { ToolbarComponent } from "../navigation/toolbar/toolbar";
 
 export const Layout = () => {
   const [getSideDrawer, setSideDrawer] = useState(false);
+  const [getSideData, setSideData] = useState(false);
 
   // set sideDrawer to false when screen width > 500
   const handleSideDrawerUponWindowResize = () =>

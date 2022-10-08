@@ -8,7 +8,7 @@
     font-size: 1.2rem;
 }
 
-.noIngredients {
+.noIngredients,.Burger_king {
     font-size: 22px;
     transition: all 250ms linear;
 }
