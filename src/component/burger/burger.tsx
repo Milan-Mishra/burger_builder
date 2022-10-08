@@ -54,6 +54,8 @@ export const Burger = ({ burgerOption }: { burgerOption: any }) => {
     burgerData = (
       <p className="noIngredients">Please start adding your ingredients!</p>
     );
+  } else {
+    console.log("array is empty");
   }
   return (
     <div className="Burger Burger_king">

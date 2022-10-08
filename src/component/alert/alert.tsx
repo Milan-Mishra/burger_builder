@@ -39,6 +39,7 @@ export const AlertComponent = ({
             sx={{ width: "100%" }}
           >
             {alertText}
+            {alertText}
           </Alert>
         </Box>
       </Snackbar>
