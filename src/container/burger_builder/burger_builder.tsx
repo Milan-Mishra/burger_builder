@@ -168,11 +168,11 @@ export const BurgerBuilder = () => {
         <Burger burgerOption={burgerOption} />
         <BurgerControllers
           buttonClickEvent={updateIngredients}
-          disabledButtonArrayList={getDisableIngredientTypes}
+          disabledButtonArrayListName={getDisableIngredientTypes}
           price={getPrice}
-          clearAll={clearAllEvent}
+          clearAllFunction={clearAllEvent}
           isClearAllDisabled={isDisabledClearAllButton}
-          burgerOption={burgerOption}
+          burgerOptionTypes={burgerOption}
         />
       </div>
     </>
