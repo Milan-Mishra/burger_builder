@@ -7,6 +7,8 @@ const App = () => {
   return (
     <BrowserRouter basename={baseURL}>
       <Layout />
+      <Layout />
+      <Layout />
     </BrowserRouter>
   );
 };
