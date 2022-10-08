@@ -8,5 +8,5 @@ export const BackdropComponent = ({
   toggleFunction: Function;
 }) =>
   show ? (
-    <div className="backdrop" onClick={() => toggleFunction(false)}></div>
+    <div className="backdrop_check" onClick={() => toggleFunction(false)}></div>
   ) : null;
