@@ -56,7 +56,7 @@ export const Burger = ({ burgerOption }: { burgerOption: any }) => {
     );
   }
   return (
-    <div className="Burger">
+    <div className="Burger Burger_king">
       <BurgerIngredient types={BurgerIngredientTypeEnum.BreadTop} />
       {burgerData}
       <BurgerIngredient types={BurgerIngredientTypeEnum.BreadBottom} />
