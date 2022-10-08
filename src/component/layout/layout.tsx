@@ -24,10 +24,8 @@ export const Layout = () => {
             <>
               <Outlet />
               <ToolbarComponent toggleFunction={setSideDrawer} />
-              <SideDrawer
-                getSideDrawer={getSideDrawer}
-                toggleFunction={setSideDrawer}
-              />
+              <ToolbarComponent toggleFunction={setSideDrawer} />
+              <ToolbarComponent toggleFunction={setSideDrawer} />
             </>
           }
         >
