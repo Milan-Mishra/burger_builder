@@ -21,10 +21,10 @@ import "./burger_builder.css";
 
 export const BurgerBuilder = () => {
   // set burger option state
-  const [getCheese, setCheese] = useState<number>(0);
-  const [getSalad, setSalad] = useState<number>(0);
-  const [getMeat, setMeat] = useState<number>(0);
-  const [getBacon, setBacon] = useState<number>(0);
+  const [getCheeseValue, setCheese] = useState<number>(0);
+  const [getSaladValue, setSalad] = useState<number>(0);
+  const [getMeatValue, setMeat] = useState<number>(0);
+  const [getBaconValue, setBacon] = useState<number>(0);
   const [getPrice, setPrice] = useState<number>(0);
   const [getDisableIngredientTypes, setDisableIngredientTypes] = useState<
     IBurgerIngredientType[]
@@ -32,15 +32,15 @@ export const BurgerBuilder = () => {
   const [isDisabledClearAllButton, setIsDisabledClearAllButton] =
     useState(true);
 
-  const [displayLoading, setDisplayLoading] = useState(true);
+  const [displayLoadingStateValue, setDisplayLoadingValue] = useState(true);
 
   const [hasIngredientFetched, setHasIngredientFetched] = useState(false);
 
   const burgerOption: IBurgerOptionType = {
-    cheese: getCheese,
-    bacon: getBacon,
-    salad: getSalad,
-    meat: getMeat,
+    cheese: getCheeseValue,
+    bacon: getBaconValue,
+    salad: getSaladValue,
+    meat: getMeatValue,
   };
 
   // update the ingredients
@@ -51,16 +51,22 @@ export const BurgerBuilder = () => {
     const value: -1 | 1 = addOrRemoveType ? 1 : -1;
     switch (ingredientType) {
       case BurgerIngredientTypeEnum.Bacon:
-        getBacon > 0 || value !== -1 ? setBacon(getBacon + value) : null;
+        getBaconValue > 1 || value === 0
+          ? setBacon(getBaconValue + value)
+          : null;
         break;
       case BurgerIngredientTypeEnum.Cheese:
-        getCheese > 0 || value !== -1 ? setCheese(getCheese + value) : null;
+        getCheeseValue > 1 || value === 0
+          ? setCheese(getCheeseValue + value)
+          : null;
         break;
       case BurgerIngredientTypeEnum.Meat:
-        getMeat > 0 || value !== -1 ? setMeat(getMeat + value) : null;
+        getMeatValue > 1 || value === 0 ? setMeat(getMeatValue + value) : null;
         break;
       case BurgerIngredientTypeEnum.Salad:
-        getSalad > 0 || value !== -1 ? setSalad(getSalad + value) : null;
+        getSaladValue > 1 || value === 0
+          ? setSalad(getSaladValue + value)
+          : null;
         break;
       default:
         break;
@@ -70,21 +76,21 @@ export const BurgerBuilder = () => {
   // update the total amount of burger
   const updateBurgerAmount = () => {
     const newPrice: number =
-      getCheese * defaultIngredientsPrice.Cheese +
-      getSalad * defaultIngredientsPrice.Salad +
-      getBacon * defaultIngredientsPrice.Bacon +
-      getMeat * defaultIngredientsPrice.Meat;
+      getCheeseValue * defaultIngredientsPrice.Cheese +
+      getSaladValue * defaultIngredientsPrice.Salad +
+      getBaconValue * defaultIngredientsPrice.Bacon +
+      getMeatValue * defaultIngredientsPrice.Meat;
     setPrice(newPrice);
   };
 
   //handle disable button array
   const handleDisableButtonArray = () => {
     const tempArray: IBurgerIngredientType[] = [];
-    !getCheese ? tempArray.push(BurgerIngredientTypeEnum.Cheese) : null;
-    !getSalad ? tempArray.push(BurgerIngredientTypeEnum.Salad) : null;
-    !getMeat ? tempArray.push(BurgerIngredientTypeEnum.Meat) : null;
-    !getBacon ? tempArray.push(BurgerIngredientTypeEnum.Bacon) : null;
-    getCheese || getSalad || getMeat || getBacon
+    !getCheeseValue ? tempArray.push(BurgerIngredientTypeEnum.Cheese) : null;
+    !getSaladValue ? tempArray.push(BurgerIngredientTypeEnum.Salad) : null;
+    !getMeatValue ? tempArray.push(BurgerIngredientTypeEnum.Meat) : null;
+    !getBaconValue ? tempArray.push(BurgerIngredientTypeEnum.Bacon) : null;
+    getCheeseValue || getSaladValue || getMeatValue || getBaconValue
       ? setIsDisabledClearAllButton(false)
       : setIsDisabledClearAllButton(true);
     setDisableIngredientTypes(tempArray);
@@ -99,14 +105,14 @@ export const BurgerBuilder = () => {
   };
 
   useEffect(() => {
-    burgerOption.cheese = getCheese;
-    burgerOption.bacon = getBacon;
-    burgerOption.salad = getSalad;
-    burgerOption.meat = getMeat;
+    burgerOption.cheese = getCheeseValue;
+    burgerOption.bacon = getBaconValue;
+    burgerOption.salad = getSaladValue;
+    burgerOption.meat = getMeatValue;
     updateBurgerAmount();
     handleDisableButtonArray();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [getCheese, getSalad, getBacon, getMeat]);
+  }, [getCheeseValue, getSaladValue, getBaconValue, getMeatValue]);
 
   const fetchIngredientsFromTheServer = async () => {
     try {
@@ -136,7 +142,7 @@ export const BurgerBuilder = () => {
       setHasIngredientFetched(false);
       return response;
     } catch (e) {
-      setDisplayLoading(false);
+      setDisplayLoadingValue(false);
       setHasIngredientFetched(true);
       console.log(e);
     }
@@ -145,7 +151,7 @@ export const BurgerBuilder = () => {
   // fetch ingredients from the server side
   useEffect(() => {
     (async () => await fetchIngredientsFromTheServer())();
-    setTimeout(() => setDisplayLoading(false), 1100);
+    setTimeout(() => setDisplayLoadingValue(false), 1100);
   }, []);
 
   return (
@@ -157,7 +163,7 @@ export const BurgerBuilder = () => {
         isSuccess={false}
         setAlert={setHasIngredientFetched}
       />
-      <LoadingComponent IsActive={displayLoading} />
+      <LoadingComponent IsActive={displayLoadingStateValue} />
       <div className="burger">
         <Burger burgerOption={burgerOption} />
         <BurgerControllers
