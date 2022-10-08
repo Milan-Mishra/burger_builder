@@ -71,34 +71,27 @@ export const ModelComponent = ({
               </li>
             </ul>
             {setAlertForConfirmation && (
-              <Box
-                mt={2}
-                display="flex"
-                alignItems="center"
-                justifyContent="center"
-              >
-                <DialogBox
-                  isAlert={false}
-                  isSuccess={true}
-                  setAlert={changeOrderConfirmStatus}
-                  getDisplayAlert={getDisplayAlert}
-                  timing={defaultAlertTiming}
-                  alertText={message.orderConfirm}
-                  isClearAllDisabled={isClearAllDisabled}
-                  name="confirm order"
-                  successFn={successFn}
-                  title={dialogBox.orderButton.title}
-                  body={`${dialogBox.orderButton.body} ${totalPrice}`}
-                  buttonColorType="success"
-                  IsForConfirmation={true}
-                  confirmationFunction={setAlertForConfirmation}
-                  successMessageButtonString={"Yes i want to purchase"}
-                  denyMessageButtonString={"No i want to add more ingredients"}
-                  changeModelStatus={changeModelStatus}
-                  totalPrice={totalPrice}
-                  burgerOption={burgerOption}
-                />
-              </Box>
+              <DialogBox
+                isAlert={false}
+                isSuccess={true}
+                setAlert={changeOrderConfirmStatus}
+                getDisplayAlert={getDisplayAlert}
+                timing={defaultAlertTiming}
+                alertText={message.orderConfirm}
+                isClearAllDisabled={isClearAllDisabled}
+                name="confirm order"
+                successFn={successFn}
+                title={dialogBox.orderButton.title}
+                body={`${dialogBox.orderButton.body} ${totalPrice}`}
+                buttonColorType="success"
+                IsForConfirmation={true}
+                confirmationFunction={setAlertForConfirmation}
+                successMessageButtonString={"Yes i want to purchase"}
+                denyMessageButtonString={"No i want to add more ingredients"}
+                changeModelStatus={changeModelStatus}
+                totalPrice={totalPrice}
+                burgerOption={burgerOption}
+              />
             )}
           </div>
         </Box>
