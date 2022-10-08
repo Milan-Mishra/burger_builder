@@ -15,8 +15,17 @@ export const ToolbarComponent = ({
       <div></div>
       <div></div>
       <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
     </div>
     <Logo isMobileDevice={false} />
+    <nav className="disableNavigationForMobile">
+      <NavigationLinks />
+    </nav>
+    <nav className="disableNavigationForMobile">
+      <NavigationLinks />
+    </nav>
     <nav className="disableNavigationForMobile">
       <NavigationLinks />
     </nav>
