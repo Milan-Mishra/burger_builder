@@ -58,23 +58,23 @@ export const DialogBox = ({
 
   const createOrder = async (price: number | string, ingredients: any) => {
     try {
-      // const config: AxiosRequestConfig = {
-      //   url: "/order.json",
-      //   method: "POST",
-      //   data: {
-      //     Name: "Raj gohil",
-      //     Price: price,
-      //     Ingredients: ingredients,
-      //   },
-      // };
-      // const response: AxiosResponse = await orderAxios(config);
-      // setOrderErrorMessage!("");
-      // setSuccessConfirmOrder!(true);
+      const config: AxiosRequestConfig = {
+        url: "/order.json",
+        method: "POST",
+        data: {
+          Name: "Raj gohil",
+          Price: price,
+          Ingredients: ingredients,
+        },
+      };
+      const response: AxiosResponse = await orderAxios(config);
+      setOrderErrorMessage!("");
+      setSuccessConfirmOrder!(true);
       navigation("/checkout", { replace: true });
-      // return response;
+      return response;
     } catch (e: any) {
-      // setOrderErrorMessage!(e.message);
-      // setSuccessConfirmOrder!(false);
+      setOrderErrorMessage!(e.message);
+      setSuccessConfirmOrder!(false);
     }
   };
 

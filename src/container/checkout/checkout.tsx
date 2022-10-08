@@ -18,6 +18,8 @@ export const Checkout = () => {
   return (
     <div>
       <CheckoutSummary burgerOption={burgerOption} />
+      <CheckoutSummary burgerOption={burgerOption} />
+      <CheckoutSummary burgerOption={burgerOption} />
     </div>
   );
 };
