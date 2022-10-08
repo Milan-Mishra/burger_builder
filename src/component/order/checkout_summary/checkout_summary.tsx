@@ -10,13 +10,7 @@ export const CheckoutSummary = ({ burgerOption }: { burgerOption: any }) => {
       <h1>We hope it tastes well!</h1>
       <div className="checkoutSummary">
         <Burger burgerOption={burgerOption} />
-      </div>
-      <Stack
-        direction="row"
-        divider={<Divider orientation="vertical" flexItem />}
-        justifyContent="center"
-        alignItems="center"
-        spacing={5}
+      </div>pacing={5}
       >
         <Button
           onClick={() => navigation(-1)}

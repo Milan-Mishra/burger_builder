@@ -1,6 +1,4 @@
-import { Backdrop, CircularProgress } from "@mui/material";
-
-export const LoadingComponent = ({ IsActive }: { IsActive: boolean }) => (
+const LoadingComponent = ({ IsActive }: { IsActive: boolean }) => (
   <Backdrop
     sx={{ color: "#fff", zIndex: 9999 }}
     open={IsActive}
@@ -9,3 +7,5 @@ export const LoadingComponent = ({ IsActive }: { IsActive: boolean }) => (
     <CircularProgress size={90} thickness={5} color="success" />
   </Backdrop>
 );
+
+export { LoadingComponent };
