@@ -104,6 +104,14 @@ export const BurgerBuilder = () => {
     setBacon(0);
   };
 
+  // clear all button
+  const clearAllData = () => {
+    setCheese(0);
+    setSalad(0);
+    setMeat(0);
+    setBacon(0);
+  };
+
   useEffect(() => {
     burgerOption.cheese = getCheeseValue;
     burgerOption.bacon = getBaconValue;
