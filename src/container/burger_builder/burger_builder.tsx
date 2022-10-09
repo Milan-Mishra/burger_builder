@@ -6,7 +6,7 @@ import { IAddOrRemoveIngredientType } from "../../types/add_or_remove_ingredient
 import { IBurgerOptionType } from "../../types/burger_option_types";
 import { LoadingComponent } from "../../component/loading/loading";
 import { AxiosRequestConfig, AxiosResponse } from "axios";
-import { orderAxios } from "../../axios-instants";
+import { orderAxiosInstance } from "../../axios-instants";
 import { AlertComponent } from "../../component/alert/alert";
 import {
   BurgerIngredientTypeEnum,
@@ -128,7 +128,7 @@ export const BurgerBuilder = () => {
         method: "GET",
         url: "/ingredients.json",
       };
-      const response: AxiosResponse = await orderAxios(config);
+      const response: AxiosResponse = await orderAxiosInstance(config);
       const { data } = response;
       Object.keys(data).map((ingredientName: any) => {
         switch (ingredientName) {
