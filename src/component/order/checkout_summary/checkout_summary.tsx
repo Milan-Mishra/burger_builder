@@ -10,8 +10,8 @@ export const CheckoutSummary = ({ burgerOption }: { burgerOption: any }) => {
       <h1>We hope it tastes well!</h1>
       <div className="checkoutSummary">
         <Burger burgerOption={burgerOption} />
-      </div>pacing={5}
-      >
+      </div>
+      <div pacing={5}>
         <Button
           onClick={() => navigation(-1)}
           style={{ textTransform: "uppercase" }}
@@ -27,7 +27,30 @@ export const CheckoutSummary = ({ burgerOption }: { burgerOption: any }) => {
         >
           Continue
         </Button>
-      </Stack>
+      </div>
     </div>
+    <div className="checkoutSummaryOuterDiv">
+    <h1>We hope it tastes well!</h1>
+    <div className="checkoutSummary">
+      <Burger burgerOption={burgerOption} />
+    </div>
+    <div pacing={5}>
+      <Button
+        onClick={() => navigation(-1)}
+        style={{ textTransform: "uppercase" }}
+        variant="contained"
+        color="error"
+      >
+        Cancel
+      </Button>
+      <Button
+        style={{ textTransform: "uppercase" }}
+        variant="contained"
+        color="success"
+      >
+        Continue
+      </Button>
+    </div>
+  </div>
   );
 };
