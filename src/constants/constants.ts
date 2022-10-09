@@ -35,3 +35,14 @@ export const dialogBox: IDialogBox = {
     body: "Are you sure you want to order this burger? it will cost you about ",
   },
 };
+
+export const newDialogBox: IDialogBox = {
+  clearAllButton: {
+    title: "Are you sure you want to do this? Are you sure?",
+    body: "After doing this all of your ingredients will be removed from the burger.",
+  },
+  orderButton: {
+    title: "Are you sure? Sure?",
+    body: "Are you sure you want to order this burger? it will cost you a lot of money.",
+  },
+};
