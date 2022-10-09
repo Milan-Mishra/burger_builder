@@ -4,10 +4,10 @@ import { IBurgerOptionType } from "../../types/burger_option_types";
 
 export const Checkout = () => {
   // set burger option state
-  const [getCheese, setCheese] = useState<number>(1);
-  const [getSalad, setSalad] = useState<number>(1);
-  const [getMeat, setMeat] = useState<number>(1);
-  const [getBacon, setBacon] = useState<number>(1);
+  const [getCheese] = useState<number>(1);
+  const [getSalad] = useState<number>(1);
+  const [getMeat] = useState<number>(1);
+  const [getBacon] = useState<number>(1);
 
   const burgerOption: IBurgerOptionType = {
     cheese: getCheese,
@@ -17,9 +17,15 @@ export const Checkout = () => {
   };
   return (
     <div>
-      <CheckoutSummary burgerOption={burgerOption} />
-      <CheckoutSummary burgerOption={burgerOption} />
-      <CheckoutSummary burgerOption={burgerOption} />
+      <CheckoutBurgerIngredient
+        CheckoutBurgerIngredient={CheckoutBurgerIngredient}
+      />
+      <CheckoutBurgerIngredient
+        CheckoutBurgerIngredient={CheckoutBurgerIngredient}
+      />
+      <CheckoutBurgerIngredient
+        CheckoutBurgerIngredient={CheckoutBurgerIngredient}
+      />
     </div>
   );
 };
